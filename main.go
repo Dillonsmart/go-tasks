@@ -17,8 +17,8 @@ func main() {
 		fmt.Println("Please provide an action.")
 		return
 	}
-	
-	action := args[0] // The first arguement is always the action
+
+	action := args[0] // The first argument is always the action to perform
 
 	switch action {
 	case "add":
