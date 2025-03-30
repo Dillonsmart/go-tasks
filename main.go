@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 
 	"github.com/Dillonsmart/go-tasks/cmd"
 	"github.com/Dillonsmart/go-tasks/db"
@@ -30,6 +31,21 @@ func main() {
 		break
 	case "list":
 		cmd.List()
+		break
+	case "delete":
+		if len(args) < 2 {
+			fmt.Println("Please provide a task ID.")
+			return
+		}
+
+		id, err := strconv.Atoi(args[1])
+
+		if err != nil {
+			fmt.Println("Invalid task ID:", err)
+			return
+		}
+		
+		cmd.Delete(id)
 		break
 	}
 }
