@@ -28,5 +28,8 @@ func main() {
 		}
 		cmd.Add(args[1])
 		break
+	case "list":
+		cmd.List()
+		break
 	}
 }
